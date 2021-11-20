@@ -1,0 +1,5 @@
+@media only screen and (min-width: 280px) and (max-width:1024px) {
+    .login button{
+        width:90% !important;
+    }
+}

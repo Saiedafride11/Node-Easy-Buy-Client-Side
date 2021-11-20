@@ -1,0 +1,12 @@
+.banner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-left{
+    width: 50%;
+}
+.banner-right{
+    width: 50%;
+    margin-bottom: -20px;
+}
