@@ -7,7 +7,8 @@ import './Products.css';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect( () => {
-        fetch('/product.json')
+        // fetch('http://localhost:5000/products')
+        fetch('https://pacific-garden-66565.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
@@ -19,11 +20,11 @@ const Products = () => {
                 :
                 <div className="products-container">
                     {
-                        products?.slice(0, 3).map(product => <ProductsSummery product={product} key={product.key}></ProductsSummery>)
+                        products?.slice(0, 3).map(product => <ProductsSummery product={product} key={product._id}></ProductsSummery>)
                     }
                 </div>
             }
-           <div className="py-5 text-center">
+           <div className="pt-3 pb-5 text-center">
                 <Link to="/products">
                     <Button variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none'}}>All Products</Button>
                 </Link>

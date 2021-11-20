@@ -6,11 +6,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
 
 const ProductsSummery = (props) => {
-    const {title, price, img, key} = props.product;
+    const {title, price, img, _id} = props.product;
     const history = useHistory();
 
     const handleProduct = () => {
-        history.push(`/product/${key}`)
+        history.push(`/product/${_id}`)
     }
     return (
         <>
@@ -20,8 +20,8 @@ const ProductsSummery = (props) => {
                         <Card.Img variant="top" src={img} />
                         <Card.Body>
                             <Card.Text>
-                                <h5>{title}</h5>
-                                <p>{price}</p>
+                                <span>{title}</span>
+                                <span>${price}</span>
                             </Card.Text>
                         </Card.Body>
                         <div className="hover-box">

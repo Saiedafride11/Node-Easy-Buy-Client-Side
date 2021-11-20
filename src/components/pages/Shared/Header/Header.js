@@ -13,7 +13,7 @@ const Header = () => {
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="header-container">
                     <Container>
-                        <Navbar.Brand as={Link} to="/home"><span style={{color: "#2c3e50"}}>Easy-Buy</span></Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/home"><span style={{color: "rgb(171, 122, 95)"}}>Easy-Buy</span></Navbar.Brand>
                         <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>

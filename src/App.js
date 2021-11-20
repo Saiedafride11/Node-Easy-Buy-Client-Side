@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/pages/Home/Home/Home';
 import NotFound from './components/pages/NotFound/NotFound';
 import Header from './components/pages/Shared/Header/Header';
@@ -11,7 +11,7 @@ import Login from './components/pages/Login/Login/Login';
 import PrivateRoute from './components/pages/Login/PrivateRoute/PrivateRoute';
 import Cart from './components/pages/Cart/Cart';
 import About from './components/pages/About/About';
-import Checkout from './components/pages/Home/Checkout/Checkout';
+import Checkout from './components/pages/Checkout/Checkout';
 
 function App() {
   

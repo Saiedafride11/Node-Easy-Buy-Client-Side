@@ -73,3 +73,12 @@
 .products-summery:hover .hover-box ul li{
     opacity: 1;
 }
+
+
+@media only screen and (min-width: 280px) and (max-width:767px) {
+    .products-summery .card{
+        width: 20rem !important;
+        margin-bottom: 22px !important;
+        margin: 0 auto;
+    }
+}

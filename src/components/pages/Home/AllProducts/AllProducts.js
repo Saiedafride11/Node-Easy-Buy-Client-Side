@@ -8,7 +8,8 @@ const AllProducts = () => {
     const [products, setProducts] = useState([]);
     const [displayProducts, setDisplayProducts] = useState([]);
     useEffect( () => {
-        fetch('/product.json')
+        // fetch('http://localhost:5000/products')
+        fetch('https://pacific-garden-66565.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data)
@@ -36,9 +37,9 @@ const AllProducts = () => {
                 {   displayProducts?.length === 0 ?
                         <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>No Any Product Show</h2>
                     :
-                    <div className="products-container">
+                    <div className="all-products-container">
                         {
-                            displayProducts?.map(product => <AllProductsSummery product={product} key={product.key}></AllProductsSummery>)
+                            displayProducts?.map(product => <AllProductsSummery product={product} key={product._id}></AllProductsSummery>)
                         }
                     </div>
                 }

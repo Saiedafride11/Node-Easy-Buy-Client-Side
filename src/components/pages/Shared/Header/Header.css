@@ -28,6 +28,12 @@
     text-align: center;
 }
 
+.navbar-dark .navbar-toggler {
+    color: #fff !important;
+}
+.navbar-toggler{
+    background-color: rgb(171, 122, 95) !important;
+}
 @media only screen and (min-width: 1400px) and (max-width:1450px) {
     .dropdown-menu{
         min-width: 11rem !important;

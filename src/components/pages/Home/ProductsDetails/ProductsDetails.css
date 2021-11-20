@@ -1,4 +1,4 @@
-.product-details{
+.product-details-summery{
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -15,6 +15,15 @@
     border: none;
     margin-right: 8px;
 }
-@media only screen and (min-width: 320px) and (max-width:992px) {
-    
+@media only screen and (min-width: 280px) and (max-width:992px) {
+    .product-details-summery{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .product-details-summery h2{
+        margin-top: 30px;
+    }
+    .product-details-summery-inner{
+        margin-left: 0px !important;
+    }
 }
