@@ -63,7 +63,7 @@ const ProductsDetailsSummery = (props) => {
                                   ))
                         }
                     </div>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
                         <button onClick={ () => setQuantity(quantity < 2 ? 1 : quantity - 1)} style={{border: 'none', backgroundColor: "transparent", fontSize: "30px"}}>-</button>&nbsp;&nbsp;
                         <h2>{quantity}</h2> 
                         &nbsp;&nbsp;<button onClick={ () => setQuantity(quantity + 1)} style={{border: 'none', backgroundColor: "transparent", fontSize: "30px"}}>+</button>

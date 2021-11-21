@@ -20,9 +20,6 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
-    .product-details-summery h2{
-        margin-top: 30px;
-    }
     .product-details-summery-inner{
         margin-left: 0px !important;
     }
