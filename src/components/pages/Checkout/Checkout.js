@@ -7,6 +7,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51JwnqrGpYkDLgyl1Zi7G6glUml9pBBKkaPLaLWQdEovIXwnpU2Cw8MJBXaf4MRwfIf1IPvCUv0DyDGicZwz6rvev00NRottOy8');
 
 const Checkout = () => {
+    document.title = 'Checkout';
     const {user} = useAuth();
     // const [orderPrices, setOrderPrice] = useState([])
     // useEffect(() => {

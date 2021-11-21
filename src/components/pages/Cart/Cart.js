@@ -8,6 +8,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 import useAuth from '../../hooks/useAuth';
 
 const Cart = () => {
+    document.title = 'Cart';
     const {user} = useAuth();
     const [carts, setCarts] = useState([]);
     useEffect( () => {

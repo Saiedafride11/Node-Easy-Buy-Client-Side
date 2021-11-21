@@ -82,7 +82,7 @@
     }
 }
 
-@media only screen and (min-width: 280px) and (max-width:3500px) {
+@media only screen and (min-width: 280px) and (max-width:350px) {
     .all-products-summery .card{
         width: 16rem !important;
         margin-bottom: 20px;

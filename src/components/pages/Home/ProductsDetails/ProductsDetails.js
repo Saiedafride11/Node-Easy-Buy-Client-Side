@@ -5,6 +5,7 @@ import ProductsDetailsSummery from '../ProductsDetailsSummery/ProductsDetailsSum
 import './ProductsDetails.css';
 
 const ProductsDetails = () => {
+    document.title = 'Product';
     const {productId} = useParams();
     const [products, setProducts] = useState([]);
     const [orders, setOrder] = useState();
