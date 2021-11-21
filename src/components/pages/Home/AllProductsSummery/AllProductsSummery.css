@@ -2,8 +2,8 @@
     position: relative;
 }
 .all-products-summery .card{
-    width: 22rem !important;
-    margin-bottom: 18px !important;
+    width: 20rem !important;
+    margin-bottom: 10px !important;
 }
 .all-products-summery .card-text{
     display: flex;
@@ -74,10 +74,18 @@
     opacity: 1;
 }
 
-@media only screen and (min-width: 280px) and (max-width:767px) {
+@media only screen and (min-width: 350px) and (max-width:840px) {
     .all-products-summery .card{
         width: 20rem !important;
         margin-bottom: 22px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-width:3500px) {
+    .all-products-summery .card{
+        width: 16rem !important;
+        margin-bottom: 20px;
         margin: 0 auto;
     }
 }

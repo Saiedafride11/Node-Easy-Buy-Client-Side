@@ -30,21 +30,42 @@ const AllProducts = () => {
                     <h2>Home / Products</h2>
                 </Container>
             </div>
-            <div className="search-container text-center py-5">
-                <input type="text" className="w-75" onChange={handleSearch} placeholder="Type here to search........." />
-            </div>
-            <h2 className="text-center py-3">Total <span style={{color: "#ab7a5f"}}>{displayProducts?.length}</span> Products Found</h2>
-            <Container>
-                {   displayProducts?.length === 0 ?
-                        <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>No Any Product Show</h2>
-                    :
-                    <div className="all-products-container">
-                        {
-                            displayProducts?.map(product => <AllProductsSummery product={product} key={product._id}></AllProductsSummery>)
-                        }
+                <Container className="all-products-container">
+                    <div className="search-container py-4">
+                        <input type="text" className="w-100" onChange={handleSearch} placeholder="Search......." />
+                        <h6 className="mt-3">Category</h6>
+                        <button className='all-product-btn'>All</button>
+                        <button className='all-product-btn'>Office</button>
+                        <button className='all-product-btn'>Living Room</button>
+                        <button className='all-product-btn'>Kitchen</button>
+                        <button className='all-product-btn'>Bedroom</button>
+                        <button className='all-product-btn'>Dining</button>
+                        <button className='all-product-btn'>Kids</button>
+
+                        <h6 className="mt-3">Company</h6>
+                        <select name="cars" id="cars">
+                            <option className="company" value="all">all</option>
+                            <option className="company" value="marcos">marcos</option>
+                            <option className="company" value="liddy">liddy</option>
+                            <option className="company" value="ikea">ikea</option>
+                            <option className="company" value="caressa">caressa</option>
+                        </select>
                     </div>
-                }
-            </Container>
+                    <div>
+                        <h2 className="text-center py-3">Total <span style={{color: "#ab7a5f"}}>{displayProducts?.length}</span> Products Found</h2>
+                        <div>
+                            {   displayProducts?.length === 0 ?
+                                    <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>No Any Product Show</h2>
+                                :
+                                <div className="all-products-inner">
+                                    {
+                                        displayProducts?.map(product => <AllProductsSummery product={product} key={product._id}></AllProductsSummery>)
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </Container>
             <div className="py-5 text-center">
                 <Link to="/home">
                     <Button variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none'}}>Back Home</Button>
