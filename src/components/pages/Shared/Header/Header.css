@@ -12,8 +12,8 @@
     border-bottom: 1px solid transparent;
 }
 .nav-link:hover{
-    border-top: 1px solid #2c3e50;
-    border-bottom: 1px solid #2c3e50;
+    border-top: 1px solid #ab7a5f;
+    border-bottom: 1px solid #ab7a5f;
     transition: 0.5s;
 }
 
@@ -33,6 +33,13 @@
 }
 .navbar-toggler{
     background-color: rgb(171, 122, 95) !important;
+}
+.color-btn-header{
+    border-radius:50px;
+    border: none;
+    padding:5px;
+    color: #fff !important;
+    background-color: #ab7a5f;
 }
 @media only screen and (min-width: 1400px) and (max-width:1450px) {
     .dropdown-menu{

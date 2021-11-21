@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 const ProductsDetailsSummery = (props) => {
-    const {img, title, review, price, details, available, sku, brand, colors, _id} = props.cart;
+    const {img, title, review, price, details, available, sku, brand, colors, _id} = props.order;
     
     const [quantity, setQuantity] = useState(1);
     const [color, setColor] = useState(colors[0]);
@@ -69,7 +69,7 @@ const ProductsDetailsSummery = (props) => {
                         &nbsp;&nbsp;<button onClick={ () => setQuantity(quantity + 1)} style={{border: 'none', backgroundColor: "transparent", fontSize: "30px"}}>+</button>
                     </div>
                     <Link to="/cart">
-                        <Button onClick={ handleOrderClick}variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none'}}>ADD TO CART</Button>
+                        <Button onClick={handleOrderClick} variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none'}}>ADD TO CART</Button>
                     </Link>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,15 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     const {user, logOut} = useAuth();
+    const [carts, setCarts] = useState([]);
+    useEffect( () => {
+        // fetch('http://localhost:5000/orders')
+        fetch('https://pacific-garden-66565.herokuapp.com/orders')
+        .then(res => res.json())
+        .then(data => {
+            setCarts(data)
+        })
+    }, [carts])
     return (
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="header-container">
@@ -44,7 +53,7 @@ const Header = () => {
                                         {   
                                             user?.displayName ?
                                                 <div>
-                                                    <Nav.Link as={Link} to="/cart">Cart <FontAwesomeIcon icon={faShoppingCart}/></Nav.Link>
+                                                    <Nav.Link as={Link} to="/cart">Cart <FontAwesomeIcon icon={faShoppingCart}/> <span className="color-btn-header">{carts?.length}</span></Nav.Link>
                                                     <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
                                                 </div>
                                             :

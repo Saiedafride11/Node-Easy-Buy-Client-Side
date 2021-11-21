@@ -7,7 +7,7 @@ import './ProductsDetails.css';
 const ProductsDetails = () => {
     const {productId} = useParams();
     const [products, setProducts] = useState([]);
-    const [carts, setCart] = useState();
+    const [orders, setOrder] = useState();
 
     useEffect( () => {
         // fetch('http://localhost:5000/products')
@@ -19,7 +19,7 @@ const ProductsDetails = () => {
 
     useEffect(() => {
         const newProduct = products?.filter(product => product._id === productId);
-        setCart(newProduct);
+        setOrder(newProduct);
       }, [products, productId]);
     return (
         <Container>
@@ -28,10 +28,10 @@ const ProductsDetails = () => {
             </Link>
             <div className="pb-5">
                 {
-                    products?.length === 0 ?
+                    orders?.length === 0 ?
                     <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>Loading...</h2>
                     :
-                    carts?.map(cart => <ProductsDetailsSummery cart={cart} key={cart.key}></ProductsDetailsSummery>)
+                    orders?.map(order => <ProductsDetailsSummery order={order} key={order.key}></ProductsDetailsSummery>)
                 }
             </div>
         </Container>

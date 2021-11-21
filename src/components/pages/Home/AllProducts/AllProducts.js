@@ -33,6 +33,7 @@ const AllProducts = () => {
             <div className="search-container text-center py-5">
                 <input type="text" className="w-75" onChange={handleSearch} placeholder="Type here to search........." />
             </div>
+            <h2 className="text-center py-3">Total <span style={{color: "#ab7a5f"}}>{displayProducts?.length}</span> Products Found</h2>
             <Container>
                 {   displayProducts?.length === 0 ?
                         <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>No Any Product Show</h2>
