@@ -55,25 +55,9 @@ const AllProducts = () => {
         setDisplayProducts(newProduct);
     }
     // ---------------------------------------------------------------------------
-    // brand filter
-    const handleBrandAll = () => {
-        setDisplayProducts([...products]);
-    }
-    const handleBrandMarcos = () => {
-        const newProduct = products?.filter(product => product.brand === 'marcos');
-        setDisplayProducts(newProduct);
-    }
-    const handleBrandLiddy = () => {
-        const newProduct = products?.filter(product => product.brand === 'Liddy');
-        setDisplayProducts(newProduct);
-    }
-    const handleBrandIkea = () => {
-        const newProduct = products?.filter(product => product.brand === 'Ikea');
-        setDisplayProducts(newProduct);
-    }
-    const handleBrandCaressa = () => {
-        const newProduct = products?.filter(product => product.brand === 'caressa');
-        setDisplayProducts(newProduct);
+    const handleCompany = e => {
+        const newProduct = products?.filter(product => product.brand === e.target.value);
+        e.target.value === 'all' ? setDisplayProducts([...products]) : setDisplayProducts(newProduct);
     }
 
     // ---------------------------------------------------------------------------
@@ -105,6 +89,9 @@ const AllProducts = () => {
         setDisplayProducts(newProduct);
     }
 
+    const handleClearFilter = () => {
+        setDisplayProducts([...products]);
+    }
 
     return (
         <>
@@ -126,12 +113,12 @@ const AllProducts = () => {
                         <button onClick={handleCategoryKids} className='all-product-btn'>Kids</button>
 
                         <h6 className="mt-3"><strong>Company</strong></h6>
-                        <select name="cars" id="cars">
-                            <option onChange={handleBrandAll} className="company" value="all">all</option>
-                            <option onChange={handleBrandMarcos} className="company" value="marcos">marcos</option>
-                            <option onChange={handleBrandLiddy} className="company" value="liddy">liddy</option>
-                            <option onChange={handleBrandIkea} className="company" value="ikea">ikea</option>
-                            <option onChange={handleBrandCaressa} className="company" value="caressa">caressa</option>
+                        <select onChange={handleCompany} name="cars" id="cars">
+                            <option className="company" value="all">all</option>
+                            <option className="company" value="Marcos">Marcos</option>
+                            <option className="company" value="Liddy">Liddy</option>
+                            <option className="company" value="Ikea">Ikea</option>
+                            <option onC className="company" value="Caressa">Caressa</option>
                         </select>
 
                         <h6 className="mt-3"><strong>Colors</strong></h6>
@@ -147,6 +134,10 @@ const AllProducts = () => {
                         <h6 className="mt-3"><strong>Price</strong></h6>
                         <h6 style={{color: '#617d98'}}>$3,099.99</h6>
                         <input type="range" onChange={handlePriceChange}/>
+
+                        <br />
+                        <br />
+                        <button onClick={handleClearFilter} style={{backgroundColor: "red", border: 'none', padding: '5px 20px', borderRadius: '4px', color: '#fff'}}>Clear Filter</button>
                     </div>
                     <div>
                         <div className="all-products-header">
