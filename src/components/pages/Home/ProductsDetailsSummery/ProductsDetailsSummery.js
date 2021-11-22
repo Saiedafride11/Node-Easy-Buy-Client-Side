@@ -58,7 +58,7 @@ const ProductsDetailsSummery = (props) => {
                                       style={{ backgroundColor: `${c}` }}
                                       key={index}
                                     >
-                                      {color === c ? (<FontAwesomeIcon icon={faCheck} style={{ color: "#fff" }} />) : null}
+                                      {color === c ? (<FontAwesomeIcon icon={faCheck} style={{ color: "#fff", fontSize: '12px' }} />) : null}
                                     </button>
                                   ))
                         }

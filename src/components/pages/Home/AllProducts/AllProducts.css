@@ -39,11 +39,22 @@
     border-radius:50%;
     border: none;
     margin-right: 8px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+
 }
 .all-products-header{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+.search-container{
+    position: sticky !important;
+    top: 70px;
+    z-index: 99;
 }
 @media only screen and (min-width: 840px) and (max-width:1240px) {
     .all-products-inner{
