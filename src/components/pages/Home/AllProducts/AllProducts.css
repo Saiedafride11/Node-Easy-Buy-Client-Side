@@ -20,7 +20,12 @@
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
 }
-.all-product-btn:hover{
+/* .all-product-btn:hover{
+    border-top: 1px solid #ab7a5f;
+    border-bottom: 1px solid #ab7a5f;
+    transition: 0.5s;
+} */
+.all-product-btn-active{
     border-top: 1px solid #ab7a5f;
     border-bottom: 1px solid #ab7a5f;
     transition: 0.5s;

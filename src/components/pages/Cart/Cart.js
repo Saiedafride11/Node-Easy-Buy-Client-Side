@@ -118,9 +118,9 @@ const Cart = () => {
            </div>
            <div style={{width: "300px", padding: "20px", border: "1px solid #bcccdc", margin: '0 auto'}}>
                <h6><strong>Subtotal : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{orderTotal}</strong></h6>
-               {/* <h6>Shipping Fee : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5.34</h6> */}
+               <h6>Shipping Fee : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5.34</h6>
                <hr />
-               <h4>Order Total : {orderTotal}</h4>
+               <h4>Order Total : {parseFloat(orderTotal) + 5.34}</h4>
                 {   user?.displayName ?
                     <Link to="/checkout">
                             <Button onClick={handlePaymentClick} variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none', width: '100%'}}>proceed to checkout</Button>

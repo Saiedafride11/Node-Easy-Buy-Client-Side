@@ -12,6 +12,8 @@ const AllProducts = () => {
     const [products, setProducts] = useState([]);
     const [displayProducts, setDisplayProducts] = useState([]);
     const [checkButton, setCheckButton] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [rangePrice, setRangePrice] = useState(0);
 
     useEffect( () => {
         // fetch('http://localhost:5000/products')
@@ -23,6 +25,7 @@ const AllProducts = () => {
         })
     }, [])
 
+
     const handleSearch = event => {
         // console.log(event.target.value);
         const searchText = event.target.value;
@@ -32,33 +35,47 @@ const AllProducts = () => {
 
     // ---------------------------------------------------------------------------
     // category filter
-    const handleCategoryAll = () => {
-        setDisplayProducts([...products]);
-    }
-    const handleCategoryOffice = () => {
-        const newProduct = products?.filter(product => product.category === 'Office');
+    // const handleCategoryAll = () => {
+    //     setDisplayProducts([...products]);
+    // }
+    // const handleCategoryOffice = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Office');
+    //     setDisplayProducts(newProduct);
+    // }
+    // const handleCategoryLivingRoom = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Living Room');
+    //     setDisplayProducts(newProduct);
+    // }
+    // const handleCategoryKitchen = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Kitchen');
+    //     setDisplayProducts(newProduct);
+    // }
+    // const handleCategoryBedroom = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Bedroom');
+    //     setDisplayProducts(newProduct);
+    // }
+    // const handleCategoryDining = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Dining');
+    //     setDisplayProducts(newProduct);
+    // }
+    // const handleCategoryKids = () => {
+    //     const newProduct = products?.filter(product => product.category === 'Kids');
+    //     setDisplayProducts(newProduct);
+    // }
+
+    const uniqeCategory = ['All', ...new Set(products.map(product => product.category))];
+    // console.log(uniqeCategory);
+
+    const handleCategory = e => {
+        setSelectedCategory(e.target.textContent);
+        let newProduct = [...products]
+        if(e.target.textContent !== 'All'){
+            newProduct = newProduct.filter(pd => pd.category === e.target.textContent);
+        }
         setDisplayProducts(newProduct);
     }
-    const handleCategoryLivingRoom = () => {
-        const newProduct = products?.filter(product => product.category === 'Living Room');
-        setDisplayProducts(newProduct);
-    }
-    const handleCategoryKitchen = () => {
-        const newProduct = products?.filter(product => product.category === 'Kitchen');
-        setDisplayProducts(newProduct);
-    }
-    const handleCategoryBedroom = () => {
-        const newProduct = products?.filter(product => product.category === 'Bedroom');
-        setDisplayProducts(newProduct);
-    }
-    const handleCategoryDining = () => {
-        const newProduct = products?.filter(product => product.category === 'Dining');
-        setDisplayProducts(newProduct);
-    }
-    const handleCategoryKids = () => {
-        const newProduct = products?.filter(product => product.category === 'Kids');
-        setDisplayProducts(newProduct);
-    }
+
+    
     // ---------------------------------------------------------------------------
     const handleCompany = e => {
         const newProduct = products?.filter(product => product.brand === e.target.value);
@@ -94,8 +111,18 @@ const AllProducts = () => {
     }
 
     // ---------------------------------------------------
-    const handlePriceChange = () => {
-        const newProduct = products?.filter(product => product.price >= 500 );
+    // const handlePriceChange = () => {
+    //     const newProduct = products?.filter(product => product.price >= 500 );
+    //     setDisplayProducts(newProduct);
+    // }
+
+
+   
+    // console.log('maxRangePrice', maxRangePrice);
+
+    const handleRangePrice = e => {
+        setRangePrice(e.target.value)
+        const newProduct = products?.filter(product => product.price <= e.target.value );
         setDisplayProducts(newProduct);
     }
 
@@ -148,14 +175,18 @@ const AllProducts = () => {
                     <div className="py-4">
                         <div className="search-container">
                             <input type="text" className="w-100" onChange={handleSearch} placeholder="Search......." />
-                            <h6 className="mt-3"><strong>Category</strong></h6>
+                            {/* <h6 className="mt-3"><strong>Category</strong></h6>
                             <button onClick={handleCategoryAll} className='all-product-btn'>All</button>
                             <button onClick={handleCategoryOffice} className='all-product-btn'>Office</button>
                             <button onClick={handleCategoryLivingRoom} className='all-product-btn'>Living Room</button>
                             <button onClick={handleCategoryKitchen} className='all-product-btn'>Kitchen</button>
                             <button onClick={handleCategoryBedroom} className='all-product-btn'>Bedroom</button>
                             <button onClick={handleCategoryDining} className='all-product-btn'>Dining</button>
-                            <button onClick={handleCategoryKids} className='all-product-btn'>Kids</button>
+                            <button onClick={handleCategoryKids} className='all-product-btn'>Kids</button> */}
+
+                            {
+                                uniqeCategory.map(uniqe => <button onClick={handleCategory} className={`${selectedCategory === uniqe ? 'all-product-btn-active' : null} all-product-btn`} key={uniqe}>{uniqe}</button>)
+                            }
 
                             <h6 className="mt-3"><strong>Company</strong></h6>
                             <select onChange={handleCompany} name="cars" id="cars">
@@ -177,8 +208,8 @@ const AllProducts = () => {
                             </div>
 
                             <h6 className="mt-3"><strong>Price</strong></h6>
-                            <h6 style={{color: '#617d98'}}>$3,099.99</h6>
-                            <input type="range" onChange={handlePriceChange}/>
+                            <h6 style={{color: '#617d98'}}>${rangePrice}</h6>
+                            <input type="range" onChange={handleRangePrice} min={0} max={1400} value={rangePrice} name='price' />
 
                             <br />
                             <br />
