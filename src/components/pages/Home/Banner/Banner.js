@@ -11,7 +11,7 @@ const Banner = () => {
                     <h1>Design Your <br/> Comfort Zone</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?</p>
                         <Link to="/products">
-                            <Button variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none'}}>Shop Now</Button>
+                            <Button variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none', letterSpacing: '1px'}}>SHOP NOW</Button>
                         </Link>
                 </div>
                 <div className="banner-right">

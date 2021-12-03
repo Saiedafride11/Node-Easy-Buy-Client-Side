@@ -49,7 +49,7 @@ const Header = () => {
                                         <div className="user-img">
                                             <img src={user?.photoURL} className="w-100 rounded-circle" alt="User" />
                                         </div>
-                                        <p className="text-center">{user?.displayName}</p>
+                                        <p className="text-center" style={{color: '#617d98'}}>{user?.displayName}</p>
                                         {   
                                             user?.displayName ?
                                                 <div>

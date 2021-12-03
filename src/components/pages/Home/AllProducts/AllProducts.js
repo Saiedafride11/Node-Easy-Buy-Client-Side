@@ -117,9 +117,6 @@ const AllProducts = () => {
     // }
 
 
-   
-    // console.log('maxRangePrice', maxRangePrice);
-
     const handleRangePrice = e => {
         setRangePrice(e.target.value)
         const newProduct = products?.filter(product => product.price <= e.target.value );

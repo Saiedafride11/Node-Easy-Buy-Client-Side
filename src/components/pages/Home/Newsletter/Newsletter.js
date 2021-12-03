@@ -3,7 +3,7 @@ import './Newsletter.css';
 
 const Newsletter = () => {
     return (
-        <div style={{backgroundColor: "#E5F1FB", padding: "40px 0px", width: "100%"}}>
+        <div style={{backgroundColor: "#E5F1FB", padding: "100px 0px 40px", width: "100%"}}>
             <div className="container">
                 <div className="newsletter">
                     <div className="d-flex align-items-center">
